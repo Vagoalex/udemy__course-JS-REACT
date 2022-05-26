@@ -1,3 +1,3 @@
-# Public repo for Udemy-course JavaScript + React
+# Tree gh-pages for projects in this repo.
 
-## Link for [Udemy-course](https://www.udemy.com/course/javascript_full/)
+#### Link for [Udemy-course](https://www.udemy.com/course/javascript_full/)
