@@ -1,0 +1,11 @@
+/* MAIN CSS SECTION */
+@import url('./null.css');
+@import url('./fonts.css');
+@import url('./components/global.css');
+@import url('./components/header.css');
+@import url('./components/main.css');
+/* если что сюда вставляешь стили из отдельных компонентов */
+@import url('../css/components/footer.css');
+@import url('./media/media-desktop.css');
+
+/* тут импортируются все стилевые элементы, сюда ничего не записывай, меняй в остальных */
