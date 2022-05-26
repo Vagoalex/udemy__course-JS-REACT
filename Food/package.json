@@ -1,0 +1,22 @@
+{
+  "name": "food",
+  "version": "1.0.0",
+  "description": "food project from UDEMY course",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "node \\js\\app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vagoalex/udemy__course-JS-REACT.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vagoalex/udemy__course-JS-REACT/issues"
+  },
+  "homepage": "https://github.com/Vagoalex/udemy__course-JS-REACT#readme",
+  "devDependencies": {
+    "json-server": "^0.17.0"
+  }
+}
