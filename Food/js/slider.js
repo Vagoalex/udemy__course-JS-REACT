@@ -69,15 +69,15 @@ export const carousel = () => {
   });
 
   btnNext.addEventListener('click', () => {
-    if (offset === parseFloat(widthWrapper) * (slides.length - 1)) {
+    if (offset === deleteNotDigits(widthWrapper) * (slides.length - 1)) {
       offset = 0;
     } else {
-      offset += parseFloat(widthWrapper);
+      offset += deleteNotDigits(widthWrapper);
     }
 
     slidesField.style.transform = `translateX(-${offset}px)`;
 
-    if (slideIndex === slides.length) {
+    if (slideIndex >= slides.length) {
       slideIndex = 1;
     } else {
       slideIndex++;
@@ -92,14 +92,14 @@ export const carousel = () => {
 
   btnPrev.addEventListener('click', () => {
     if (offset === 0) {
-      offset = parseFloat(widthWrapper) * (slides.length - 1);
+      offset = deleteNotDigits(widthWrapper) * (slides.length - 1);
     } else {
-      offset -= parseFloat(widthWrapper);
+      offset -= deleteNotDigits(widthWrapper);
     }
 
     slidesField.style.transform = `translateX(-${offset}px)`;
 
-    if (slideIndex === 1) {
+    if (slideIndex <= 1) {
       slideIndex = slides.length;
     } else {
       slideIndex--;
@@ -117,7 +117,7 @@ export const carousel = () => {
       const slideTo = e.target.getAttribute('data-slide-to');
 
       slideIndex = slideTo;
-      offset = parseFloat(widthWrapper) * (slideTo - 1);
+      offset = deleteNotDigits(widthWrapper) * (slideTo - 1);
 
       slidesField.style.transform = `translateX(-${offset}px)`;
 
@@ -145,7 +145,7 @@ export const carousel = () => {
   activeDot(dots, slideIndex);
 
   function activeDot(arr, index) {
-    arr.forEach((dot) => (dot.style.opacity = 0.5));
+    arr.forEach((dot) => (dot.style.opacity = '.5'));
     arr[index - 1].style.opacity = 1;
   }
 
@@ -157,5 +157,9 @@ export const carousel = () => {
       totalSlides.textContent = slides.length;
       currentSlide.textContent = index;
     }
+  }
+
+  function deleteNotDigits(str) {
+    return +str.replace(/\D/g, '');
   }
 };
