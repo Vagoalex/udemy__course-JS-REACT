@@ -1,6 +1,16 @@
-import { postData } from './ajax.js';
+function modal() {
+  const postData = async (server, data) => {
+    const promise = await fetch(server, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: data,
+    });
 
-export function modalWindow() {
+    return await promise.json();
+  };
+
   const modalTrigggers = document.querySelectorAll('[data-modal]');
   const modalWindow = document.querySelector('.modal');
   const body = document.body;
@@ -114,3 +124,5 @@ export function modalWindow() {
     }, 4000);
   }
 }
+
+module.exports = modal;

@@ -2,7 +2,7 @@
   "name": "food",
   "version": "1.0.0",
   "description": "food project from UDEMY course",
-  "main": "js/app.js",
+  "main": "js/index.js",
   "scripts": {
     "test": "node \\js\\app.js"
   },
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Vagoalex/udemy__course-JS-REACT#readme",
   "devDependencies": {
-    "json-server": "^0.17.0"
+    "json-server": "^0.17.0",
+    "webpack-cli": "^4.9.2"
   }
 }
