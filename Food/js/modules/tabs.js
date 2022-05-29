@@ -1,38 +1,38 @@
-function tabs() {
-  const tabsContent = document.querySelectorAll('.tabcontent');
-  const tabs = document.querySelectorAll('.tabheader__item');
-  const tabsWrapper = document.querySelector('.tabheader__items');
+function tabs(triggerContent, triggerElements, wrapper, activeClass) {
+  const tabsContent = document.querySelectorAll(triggerContent);
+  const tabs = document.querySelectorAll(triggerElements);
+  const tabsWrapper = document.querySelector(wrapper);
 
-  const hideTabContent = () => {
+  const hideTabContent = (activeClass) => {
     tabsContent.forEach((item) => {
       item.classList.add('hide');
       item.classList.remove('show', 'fade');
     });
     tabs.forEach((item) => {
-      item.classList.remove('tabheader__item_active');
+      item.classList.remove(activeClass);
     });
   };
 
-  const showTabsContent = (i = 0) => {
+  const showTabsContent = (activeClass, i = 0) => {
     tabsContent[i].classList.remove('hide');
     tabsContent[i].classList.add('show', 'fade');
-    tabs[i].classList.add('tabheader__item_active');
+    tabs[i].classList.add(activeClass);
   };
 
-  hideTabContent();
-  showTabsContent();
+  hideTabContent(activeClass);
+  showTabsContent(activeClass);
 
   tabsWrapper.addEventListener('click', (e) => {
     const target = e.target;
 
-    if (target && target.classList.contains('tabheader__item'))
+    if (target && target.classList.contains(triggerElements.slice(1)))
       tabs.forEach((item, index) => {
         if (item === target) {
-          hideTabContent();
-          showTabsContent(index);
+          hideTabContent(activeClass);
+          showTabsContent(activeClass, index);
         }
       });
   });
 }
 
-module.exports = tabs;
+export default tabs;

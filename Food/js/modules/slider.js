@@ -1,4 +1,4 @@
-function slider() {
+function slider(sliderData) {
   // simple slider not used. It's for example
   const simpleSlider = () => {
     const slides = document.querySelectorAll('.offer__slide'),
@@ -40,17 +40,26 @@ function slider() {
   };
 
   // carousel is working in project
-  const carousel = () => {
-    const slider = document.querySelector('.offer__slider'),
-      slides = document.querySelectorAll('.offer__slide'),
-      slidesWrapper = document.querySelector('.offer__slider-wrapper'),
+  const carousel = ({
+    container,
+    slideElements,
+    wrapper,
+    next,
+    prev,
+    currentCount,
+    totalCount,
+    dotsParent,
+  }) => {
+    const slider = document.querySelector(container),
+      slides = document.querySelectorAll(slideElements),
+      slidesWrapper = document.querySelector(wrapper),
       slidesField = document.querySelector('.offer__slider-inner'),
-      btnNext = document.querySelector('.offer__slider-next'),
-      btnPrev = document.querySelector('.offer__slider-prev'),
-      current = document.querySelector('#current'),
-      total = document.querySelector('#total'),
+      btnNext = document.querySelector(next),
+      btnPrev = document.querySelector(prev),
+      current = document.querySelector(currentCount),
+      total = document.querySelector(totalCount),
       widthWrapper = window.getComputedStyle(slidesWrapper).width,
-      dotsWrapper = document.querySelector('.carousel-indicators');
+      dotsWrapper = document.querySelector(dotsParent);
 
     let dots = [];
     let slideIndex = 1;
@@ -167,7 +176,7 @@ function slider() {
     }
   };
 
-  carousel();
+  carousel(sliderData);
 }
 
-module.exports = slider;
+export default slider;
