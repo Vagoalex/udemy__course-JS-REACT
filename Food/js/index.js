@@ -1,4 +1,6 @@
 'use strict';
+import 'nodelist-foreach-polyfill';
+import 'promise-polyfill/src/polyfill';
 
 import tabs from './modules/tabs';
 import { modal, openModal } from './modules/modal';
