@@ -1,0 +1,37 @@
+{
+  "name": "food",
+  "version": "1.0.0",
+  "description": "food project from UDEMY course",
+  "main": "js/index.js",
+  "browserslist": [
+    "> 1%"
+  ],
+  "scripts": {
+    "test": "node \\js\\app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vagoalex/udemy__course-JS-REACT.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vagoalex/udemy__course-JS-REACT/issues"
+  },
+  "homepage": "https://github.com/Vagoalex/udemy__course-JS-REACT#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.18.2",
+    "babel-loader": "^8.2.5",
+    "core-js": "^3.22.7",
+    "json-server": "^0.17.0",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "nodelist-foreach-polyfill": "^1.2.0",
+    "promise-polyfill": "^8.2.3"
+  }
+}
