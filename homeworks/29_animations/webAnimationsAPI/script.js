@@ -7,7 +7,7 @@ const btnPhone = document.querySelector('#iphone'),
 let phoneAnimation;
 let btnMacbookAnimation;
 
-btnPhone.addEventListener('click', () => {
+images[0].addEventListener('click', () => {
   if (!phoneAnimation) {
     phoneAnimation = images[0].animate(
       [
@@ -34,7 +34,7 @@ btnPhone.addEventListener('click', () => {
   }
 });
 
-btnMacbook.addEventListener('click', () => {
+images[1].addEventListener('click', () => {
   if (!btnMacbookAnimation) {
     btnMacbookAnimation = images[1].animate(
       [
